@@ -1,0 +1,29 @@
+<html>
+<body>
+
+<form action="/" method="post" enctype="application/x-www-form-urlencoded">
+    <textarea cols="100" rows="30" id="message" name="message">
+{"action": "idk", "lol": "wut?", "number": 52}
+    </textarea>
+
+    <p><input type="submit" class="sendamessage" value="Send" id="send_message" name="send_message"></p>
+
+    <p id="status">...</p>
+</form>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript">
+$("input.sendamessage").click(function(event) {
+  event.preventDefault();
+
+  var message = $('textarea#message').val();
+  var id = $('input#id').val();
+  $.post('/', message).done(function(data) {
+    $('#status').val("All done").show().fadeOut('slow');
+  });
+
+});
+</script>
+
+</body>
+</html>

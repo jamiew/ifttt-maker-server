@@ -39,7 +39,7 @@ class IFTTT(BaseHTTPRequestHandler):
 def run(port=9090):
     server_address = ('', port)
     httpd = HTTPServer(server_address, IFTTT)
-    print 'Starting httpd...'
+    print 'Starting httpd on port ' + str(port) + '...'
     httpd.serve_forever()
 
 if __name__ == "__main__":
